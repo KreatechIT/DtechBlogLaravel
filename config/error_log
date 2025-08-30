@@ -1,0 +1,20 @@
+[30-Jun-2024 10:40:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/dtechcorpltd/public_html/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/dtechcorpltd/public_html/config/database.php on line 18
+[12-Jul-2025 11:33:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/kreaylqy/dtechcorpltd.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/kreaylqy/dtechcorpltd.com/config/database.php on line 18
+[23-Jul-2025 23:22:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/kreaylqy/dtechcorpltd.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/kreaylqy/dtechcorpltd.com/config/database.php on line 18
+[23-Jul-2025 23:24:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/kreaylqy/dtechcorpltd.com/config/app.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/kreaylqy/dtechcorpltd.com/config/app.php on line 18
+[23-Jul-2025 23:24:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/kreaylqy/dtechcorpltd.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/kreaylqy/dtechcorpltd.com/config/cache.php on line 18
