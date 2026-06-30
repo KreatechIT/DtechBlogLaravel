@@ -31,8 +31,8 @@
                     </li>
                     <li><a href="{{ route('website.products') }}">Products</a></li>
                     <li><a href="{{ route('website.career') }}">Career</a></li>
+                    <li><a href="{{ route('website.blog') }}">Blog</a></li>
                     <li><a href="{{ route('website.contact') }}">Contact</a></li>
-                     <li><a href="https://blog.dtechcorpltd.com/">Blog</a></li>
                 </ul>
             </nav>
         </div>
@@ -90,8 +90,7 @@
                             </li>
                             <li><a href="{{ route('website.products') }}">Products</a></li>
                             <li><a href="{{ route('website.career') }}">Career</a></li>
-                                   <li><a href="https://blog.dtechcorpltd.com/">Blog</a></li>
-                            <li><a href="https://www.dtechcorpltd.com/contact">Contact</a></li>
+                            <li><a href="{{ route('website.blog') }}">Blog</a></li>
                             <li><a href="{{ route('website.contact') }}">Contact</a></li>
                         </ul>
                     </nav>

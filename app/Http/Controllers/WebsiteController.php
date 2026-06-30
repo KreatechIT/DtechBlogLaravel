@@ -3740,6 +3740,29 @@ class WebsiteController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
-        return view('website.blog.single', compact('post'));
+        $related = \App\Models\Post::published()
+            ->with(['categories'])
+            ->when($post->categories->isNotEmpty(), fn($q) =>
+                $q->whereHas('categories', fn($q2) =>
+                    $q2->whereIn('categories.id', $post->categories->pluck('id'))
+                )
+            )
+            ->where('id', '!=', $post->id)
+            ->orderBy('published_at', 'desc')
+            ->take(4)
+            ->get();
+
+        $allCategories = \App\Models\Category::withCount('posts')
+            ->having('posts_count', '>', 0)
+            ->orderByDesc('posts_count')
+            ->get();
+
+        $allTags = \App\Models\Tag::withCount('posts')
+            ->having('posts_count', '>', 0)
+            ->orderByDesc('posts_count')
+            ->take(20)
+            ->get();
+
+        return view('website.blog.single', compact('post', 'related', 'allCategories', 'allTags'));
     }
 }
