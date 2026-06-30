@@ -3722,4 +3722,24 @@ class WebsiteController extends Controller
         // For now, let's just return the slug to the view
         return view('service.show', ['slug' => $slug]);
     }
+
+    public function blogPage()
+    {
+        $posts = \App\Models\Post::published()
+            ->with(['author', 'categories'])
+            ->orderBy('published_at', 'desc')
+            ->paginate(12);
+
+        return view('website.blog.index', compact('posts'));
+    }
+
+    public function blogSinglePage($slug)
+    {
+        $post = \App\Models\Post::published()
+            ->with(['author', 'categories', 'tags'])
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        return view('website.blog.single', compact('post'));
+    }
 }

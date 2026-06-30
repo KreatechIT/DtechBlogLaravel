@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\ProfileController;
 
@@ -27,13 +28,18 @@ Route::get('/project/{slug}', [WebsiteController::class, 'singleProjectPage'])->
 Route::get('/products', [WebsiteController::class, 'productsPage'])->name('website.products');
 
 Route::get('/contact', [WebsiteController::class, 'contactPage'])->name('website.contact');
-Route::post('/submit-contact-form', [WebsiteController::class, 'submitContactForm'])->name('website.contact.submit');
+Route::post('/submit-contact-form', [WebsiteController::class, 'submitContactForm'])->middleware('throttle:5,1')->name('website.contact.submit');
 
 Route::get('/career', [WebsiteController::class, 'careerPage'])->name('website.career');
-Route::post('/submit-career-form', [WebsiteController::class, 'submitCareerForm'])->name('website.career.submit');
+Route::post('/submit-career-form', [WebsiteController::class, 'submitCareerForm'])->middleware('throttle:5,1')->name('website.career.submit');
 
 Route::get('/our-clients', [WebsiteController::class, 'ourClientsPage'])->name('website.clients');
 Route::get('/our-suppliers', [WebsiteController::class, 'ourSuppliersPage'])->name('website.suppliers');
+
+Route::get('/blog', [WebsiteController::class, 'blogPage'])->name('website.blog');
+Route::get('/blog/{slug}', [WebsiteController::class, 'blogSinglePage'])->name('website.blog.single');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 
 

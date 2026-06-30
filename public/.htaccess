@@ -1,3 +1,26 @@
+# ── Security Headers ────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    # Enable once site is fully HTTPS — enforces HTTPS for 1 year including subdomains
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ── Block Sensitive File Types ───────────────────────────────────────────────
+<FilesMatch "(?i)\.(env|bak|conf|dist|sql|log|sh|bash|inc|orig|swap?)$">
+    Require all denied
+</FilesMatch>
+
+# ── Block Hidden Files (.git, .htpasswd, etc.) ───────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule "(^|/)\." - [F,L]
+</IfModule>
+
+# ── Laravel Rewrite ──────────────────────────────────────────────────────────
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

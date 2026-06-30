@@ -52,13 +52,25 @@ class PostResource extends Resource
                             if (($get('slug') ?? '') !== Str::slug($old ?? '')) {
                                 return;
                             }
-                            $set('slug', Str::slug($state));
+                            $newSlug = Str::slug($state ?? '');
+                            $set('slug', $newSlug);
+                            if (empty($get('canonical_url'))) {
+                                $set('canonical_url', url('/blog/' . $newSlug));
+                            }
                         }),
 
                     TextInput::make('slug')
                         ->required()
                         ->unique(Post::class, 'slug', ignoreRecord: true)
-                        ->maxLength(255),
+                        ->maxLength(255)
+                        ->live(onBlur: true)
+                        ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
+                            $oldUrl = url('/blog/' . ($old ?? ''));
+                            $current = $get('canonical_url') ?? '';
+                            if (empty($current) || $current === $oldUrl) {
+                                $set('canonical_url', url('/blog/' . ($state ?? '')));
+                            }
+                        }),
 
                     TextInput::make('h1_title')
                         ->label('H1 Title')
