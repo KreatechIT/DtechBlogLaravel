@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($php = \"C:\\\\laragon\\\\bin\\\\php\\\\php-8.3.30-Win32-vs16-x64\\\\php.exe\"; Set-Location \"e:\\\\KreaTech\\\\DtechBlogLaravel\"; & $php artisan key:generate 2>&1)",
+      "PowerShell($php = \"C:\\\\laragon\\\\bin\\\\php\\\\php-8.3.30-Win32-vs16-x64\\\\php.exe\"; Set-Location \"e:\\\\KreaTech\\\\DtechBlogLaravel\"; & $php artisan migrate --force 2>&1)",
+      "PowerShell($php = \"C:\\\\laragon\\\\bin\\\\php\\\\php-8.3.30-Win32-vs16-x64\\\\php.exe\"; Set-Location \"e:\\\\KreaTech\\\\DtechBlogLaravel\"; & $php artisan filament:install --panels --no-interaction 2>&1)",
+      "PowerShell($php = \"C:\\\\laragon\\\\bin\\\\php\\\\php-8.3.30-Win32-vs16-x64\\\\php.exe\"; Set-Location \"e:\\\\KreaTech\\\\DtechBlogLaravel\"; & $php artisan package:discover --ansi 2>&1)",
+      "PowerShell($php = \"C:\\\\laragon\\\\bin\\\\php\\\\php-8.3.30-Win32-vs16-x64\\\\php.exe\"; Set-Location \"e:\\\\KreaTech\\\\DtechBlogLaravel\"; & $php artisan route:list --compact 2>&1 | Select-Object -First 20)"
+    ]
+  }
+}
