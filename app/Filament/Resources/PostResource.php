@@ -102,7 +102,8 @@ class PostResource extends Resource
                         ->preload(),
 
                     DateTimePicker::make('published_at')
-                        ->label('Published At'),
+                        ->label('Published At')
+                        ->default(fn () => now()),
                 ]),
 
             // ── Row 2: Body + Content Blocks | Taxonomy ──────────────
