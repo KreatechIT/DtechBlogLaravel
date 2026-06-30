@@ -313,7 +313,10 @@ class PostResource extends Resource
             ->columns([
                 ImageColumn::make('featured_image_path')
                     ->label('Image')
-                    ->square(),
+                    ->square()
+                    ->getStateUsing(fn ($record) => $record->featured_image_url
+                        ? url($record->featured_image_url)
+                        : null),
 
                 TextColumn::make('title')
                     ->searchable()
