@@ -3752,13 +3752,13 @@ class WebsiteController extends Controller
             ->take(4)
             ->get();
 
-        $allCategories = \App\Models\Category::withCount('posts')
-            ->having('posts_count', '>', 0)
+        $allCategories = \App\Models\Category::whereHas('posts')
+            ->withCount('posts')
             ->orderByDesc('posts_count')
             ->get();
 
-        $allTags = \App\Models\Tag::withCount('posts')
-            ->having('posts_count', '>', 0)
+        $allTags = \App\Models\Tag::whereHas('posts')
+            ->withCount('posts')
             ->orderByDesc('posts_count')
             ->take(20)
             ->get();

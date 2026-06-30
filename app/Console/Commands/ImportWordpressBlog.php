@@ -308,8 +308,8 @@ class ImportWordpressBlog extends Command
             $html
         );
 
-        // 3. Strip zero-width / invisible characters
-        $html = preg_replace('/[\x{200B}-\x{200D}\x{FEFF}\x{00AD}]/u', '', $html);
+        // 3. Strip zero-width / invisible chars + WordPress checkbox characters (□ ☐ ☑ ☒)
+        $html = preg_replace('/[\x{200B}-\x{200D}\x{FEFF}\x{00AD}\x{25A1}\x{2610}-\x{2612}]/u', '', $html);
 
         // 4. Rewrite localhost development links to # (they're internal cross-links)
         $html = preg_replace(

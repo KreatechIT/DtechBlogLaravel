@@ -223,7 +223,7 @@
 
 {{-- ── Breadcrumb ── --}}
 <x-breadcrumb image="assets/img/bg/ar-shape.png"
-    activePage="{{ Str::limit($post->h1_title ?? $post->title, 55) }}"
+    activePage="{{ $post->h1_title ?? $post->title }}"
     :pageLinks="['website.home' => 'Home', 'website.blog' => 'Blog']" />
 
 {{-- ── Main content ── --}}
