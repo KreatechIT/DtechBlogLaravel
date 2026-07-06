@@ -3765,4 +3765,38 @@ class WebsiteController extends Controller
 
         return view('website.blog.single', compact('post', 'related', 'allCategories', 'allTags'));
     }
+
+    public function blogPreviewPage($slug)
+    {
+        $post = \App\Models\Post::with(['author', 'categories', 'tags'])
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        $related = \App\Models\Post::published()
+            ->with(['categories'])
+            ->when($post->categories->isNotEmpty(), fn($q) =>
+                $q->whereHas('categories', fn($q2) =>
+                    $q2->whereIn('categories.id', $post->categories->pluck('id'))
+                )
+            )
+            ->where('id', '!=', $post->id)
+            ->orderBy('published_at', 'desc')
+            ->take(4)
+            ->get();
+
+        $allCategories = \App\Models\Category::whereHas('posts')
+            ->withCount('posts')
+            ->orderByDesc('posts_count')
+            ->get();
+
+        $allTags = \App\Models\Tag::whereHas('posts')
+            ->withCount('posts')
+            ->orderByDesc('posts_count')
+            ->take(20)
+            ->get();
+
+        $isPreview = true;
+
+        return view('website.blog.single', compact('post', 'related', 'allCategories', 'allTags', 'isPreview'));
+    }
 }

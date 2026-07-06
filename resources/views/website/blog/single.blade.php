@@ -5,7 +5,9 @@
 <title>{{ $post->meta_title ?? ($post->h1_title ?? $post->title) }} | DTech Blog</title>
 <meta name="description" content="{{ $post->meta_description ?? $post->excerpt }}">
 <link rel="canonical" href="{{ $post->canonical_url ?? url('/blog/' . $post->slug) }}">
-@if($post->meta_robots)
+@if($isPreview ?? false)
+<meta name="robots" content="noindex, nofollow">
+@elseif($post->meta_robots)
 <meta name="robots" content="{{ $post->meta_robots }}">
 @endif
 
@@ -211,6 +213,12 @@
 @endpush
 
 @section('page-content')
+
+@if($isPreview ?? false)
+<div style="background:#fef3c7;color:#92400e;text-align:center;padding:12px;font-weight:600;position:sticky;top:0;z-index:1000;">
+    PREVIEW MODE — Status: {{ ucfirst($post->status) }}. This page is not indexed and is not visible on the public blog listing.
+</div>
+@endif
 
 {{-- ── Reading progress ── --}}
 <div id="reading-progress"></div>

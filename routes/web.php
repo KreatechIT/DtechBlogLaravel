@@ -37,6 +37,9 @@ Route::get('/our-clients', [WebsiteController::class, 'ourClientsPage'])->name('
 Route::get('/our-suppliers', [WebsiteController::class, 'ourSuppliersPage'])->name('website.suppliers');
 
 Route::get('/blog', [WebsiteController::class, 'blogPage'])->name('website.blog');
+Route::get('/blog/{slug}/preview', [WebsiteController::class, 'blogPreviewPage'])
+    ->name('website.blog.preview')
+    ->middleware('signed');
 Route::get('/blog/{slug}', [WebsiteController::class, 'blogSinglePage'])->name('website.blog.single');
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');

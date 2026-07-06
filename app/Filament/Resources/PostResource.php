@@ -19,6 +19,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -26,6 +27,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
 class PostResource extends Resource
@@ -352,6 +354,7 @@ class PostResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 SelectFilter::make('status')
                     ->options([
@@ -363,8 +366,22 @@ class PostResource extends Resource
                 SelectFilter::make('author')
                     ->relationship('author', 'name'),
             ])
-            ->actions([EditAction::make()])
+            ->actions([static::previewAction(), EditAction::make()])
             ->bulkActions([BulkActionGroup::make([DeleteBulkAction::make()])]);
+    }
+
+    public static function previewAction(): Action
+    {
+        return Action::make('preview')
+            ->label('Preview')
+            ->icon('heroicon-o-eye')
+            ->color('gray')
+            ->url(fn (Post $record) => URL::temporarySignedRoute(
+                'website.blog.preview',
+                now()->addHours(2),
+                ['slug' => $record->slug],
+            ))
+            ->openUrlInNewTab();
     }
 
     public static function getPages(): array

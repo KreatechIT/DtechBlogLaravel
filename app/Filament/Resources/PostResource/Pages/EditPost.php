@@ -12,6 +12,6 @@ class EditPost extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        return [DeleteAction::make()];
+        return [PostResource::previewAction(), DeleteAction::make()];
     }
 }
