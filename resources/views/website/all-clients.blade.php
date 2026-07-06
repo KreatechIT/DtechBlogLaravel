@@ -1,7 +1,13 @@
 @extends('layouts.website')
 
 @section('page-meta')
-<title>Our Clients || DTech Corporation</title>
+@php
+    $pageTitle = 'Our Clients || DTech Corporation';
+    $pageDescription = 'Meet the clients who trust DTech Corporation for facade design, engineering, and construction solutions.';
+@endphp
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $pageDescription }}">
+<x-json-ld type="WebPage" :data="['name' => $pageTitle, 'description' => $pageDescription, 'url' => url()->current()]" />
 @endsection
 
 @section('page-content')

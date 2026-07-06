@@ -1,12 +1,13 @@
 @extends('layouts.website')
 
 @section('page-meta')
-<title> Dtech Corp Ltd Products Are Cst Covers, Durlum, Bond Alpolic
-</title>
-   <meta name="description"
-        content="Dtech Corporation partners with Quality products - CST covers, Momentive, Durlum, Bond, Alpolic Mitsubishi Plastics. Leading the way in excellence.
-
-">
+@php
+    $pageTitle = 'Dtech Corp Ltd Products Are Cst Covers, Durlum, Bond Alpolic';
+    $pageDescription = 'Dtech Corporation partners with quality products - CST covers, Momentive, Durlum, Bond, Alpolic Mitsubishi Plastics. Leading the way in excellence.';
+@endphp
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $pageDescription }}">
+<x-json-ld type="WebPage" :data="['name' => $pageTitle, 'description' => $pageDescription, 'url' => url()->current()]" />
 @endsection
 
 

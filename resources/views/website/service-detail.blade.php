@@ -4,6 +4,13 @@
 @section('page-meta')
 <title>{{ $serviceDetails->name }} - Dtech Corp Ltd</title>
 <meta name="description" content="{{ $serviceDetails->description }}">
+<x-json-ld type="Service" :data="[
+    'name' => $serviceDetails->name,
+    'description' => $serviceDetails->description,
+    'url' => url()->current(),
+    'provider' => ['@type' => 'Organization', 'name' => config('organization.name')],
+    'areaServed' => 'BD',
+]" />
 @endsection
 
 @section('page-content')

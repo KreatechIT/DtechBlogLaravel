@@ -31,28 +31,22 @@
 @endif
 
 {{-- Schema.org BlogPosting --}}
-@if($post->schema_output)
-<script type="application/ld+json">{!! $post->schema_output !!}</script>
-@else
-<script type="application/ld+json">
-{!! json_encode([
-    '@context'        => 'https://schema.org',
-    '@type'           => 'BlogPosting',
-    'headline'        => $post->meta_title ?? $post->h1_title ?? $post->title,
-    'image'           => $post->featured_image_url ?? asset('assets/img/logo/dtech_logo_new.png'),
-    'datePublished'   => ($post->published_at ?? $post->created_at)->toIso8601String(),
-    'dateModified'    => $post->updated_at->toIso8601String(),
-    'author'          => ['@type' => 'Person', 'name' => $post->author?->name ?? 'DTech Corporation'],
-    'publisher'       => [
+@if($post->schema_output === 'enabled')
+<x-json-ld :type="$post->primary_schema_type ?: 'BlogPosting'" :data="[
+    'headline' => $post->meta_title ?? $post->h1_title ?? $post->title,
+    'image' => $post->featured_image_url ?? config('organization.url') . config('organization.logo'),
+    'datePublished' => ($post->published_at ?? $post->created_at)->toIso8601String(),
+    'dateModified' => $post->updated_at->toIso8601String(),
+    'author' => ['@type' => 'Person', 'name' => $post->author?->name ?? config('organization.name')],
+    'publisher' => [
         '@type' => 'Organization',
-        'name'  => 'DTech Corporation Ltd',
-        'logo'  => ['@type' => 'ImageObject', 'url' => asset('assets/img/logo/dtech_logo_new.png')],
+        'name' => config('organization.name'),
+        'logo' => ['@type' => 'ImageObject', 'url' => config('organization.url') . config('organization.logo')],
     ],
-    'description'     => $post->meta_description ?? $post->excerpt ?? '',
-    'url'             => $post->canonical_url ?? url('/blog/' . $post->slug),
-    'mainEntityOfPage'=> ['@type' => 'WebPage', '@id' => $post->canonical_url ?? url('/blog/' . $post->slug)],
-], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-</script>
+    'description' => $post->meta_description ?? $post->excerpt ?? '',
+    'url' => $post->canonical_url ?? url('/blog/' . $post->slug),
+    'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => $post->canonical_url ?? url('/blog/' . $post->slug)],
+]" />
 @endif
 @endsection
 

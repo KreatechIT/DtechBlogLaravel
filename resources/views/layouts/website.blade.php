@@ -21,22 +21,24 @@
     <link rel="mask-icon" href="{{ asset('assets/img/favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+@yield('page-meta')
+
+{{-- Site-wide fallbacks: pages that define their own og:*/twitter:* tags above take precedence
+     since crawlers use the first tag found for a given property. --}}
+<title>D-Tech Corporation Ltd is the Best for facade design in Bangladesh</title>
+<meta name="description" content="Dtech corp ltd is responsible for leading the design, procurement, programming, testing, installation, repair and refurbishment process of facade systems in Bangladesh." />
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@dtech">
 <meta name="twitter:title" content="D-Tech Corporation Best for Facade Design and Sourcing Solutions.">
 <meta name="twitter:description" content="Dtech Corp Ltd is responsible for leading the design, procurement, programming, testing, installation, repair and refurbishment process of facade systems.">
 <meta name="twitter:image" content="https://www.dtechcorpltd.com/assets/img/logo/dtech_logo_new.png">
 
-<meta property="og:title" content=D-Tech Corporation Best for Facade Design and Sourcing Solutions.>
-<meta property="og:site_name" content=D-tech>
-<meta property="og:url" content=https://www.dtechcorpltd.com/>
-<meta property="og:description" content=Dtech Corp Ltd is responsible for leading the design, procurement, programming, testing, installation, repair and refurbishment process of facade systems, on many diverse and prestigious landmark projects especially around Bangladesh.
-> 
-<metaproperty="og:type" content=website>
-<meta property="og:image" content=https://www.dtechcorpltd.com/assets/img/logo/dtech_logo_new.png>
-    @yield('page-meta')
- <title>D-Tech Corporation Ltd is the Best for facade design in Bangladesh</title>
- <meta name="description" content="Dtech corp ltd is responsible for leading the design, procurement, programming, testing, installation, repair and refurbishment process of facade systems in Bangladesh." />
+<meta property="og:title" content="D-Tech Corporation Best for Facade Design and Sourcing Solutions.">
+<meta property="og:site_name" content="D-tech">
+<meta property="og:url" content="https://www.dtechcorpltd.com/">
+<meta property="og:description" content="Dtech Corp Ltd is responsible for leading the design, procurement, programming, testing, installation, repair and refurbishment process of facade systems, on many diverse and prestigious landmark projects especially around Bangladesh.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.dtechcorpltd.com/assets/img/logo/dtech_logo_new.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -54,29 +56,21 @@
     @stack('styles')
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Corporation",
-  "name": "DTech Corporation Limited",
-  "alternateName": "Dtech",
-  "url": "https://www.dtechcorpltd.com/",
-  "logo": "https://www.dtechcorpltd.com/assets/img/logo/dtech_logo_new.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+8801988818050",
-    "contactType": "customer service",
-    "contactOption": "TollFree",
-    "areaServed": "BD",
-    "availableLanguage": "en"
-  },
-  "sameAs": [
-    "https://www.facebook.com/dtechcorporationlimited/",
-    "https://www.instagram.com/dtechcorporationlimited/",
-    "https://www.linkedin.com/company/dtechcorporationlimited/"
-  ]
-}
-</script>
+<x-json-ld type="Corporation" :data="[
+    'name' => config('organization.legal_name'),
+    'alternateName' => config('organization.alternate_name'),
+    'url' => config('organization.url') . '/',
+    'logo' => config('organization.url') . config('organization.logo'),
+    'contactPoint' => [
+        '@type' => 'ContactPoint',
+        'telephone' => config('organization.phone'),
+        'contactType' => 'customer service',
+        'contactOption' => 'TollFree',
+        'areaServed' => 'BD',
+        'availableLanguage' => 'en',
+    ],
+    'sameAs' => config('organization.social'),
+]" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZRJVM5NFS"></script>
 

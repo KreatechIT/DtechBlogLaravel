@@ -1,12 +1,19 @@
 @extends('layouts.website')
 
 @section('page-meta')
-<title> Dtech Corp Ltd services at Premier Geodesic Domes & Canopies
-</title>
-   <meta name="description"
-        content="Dtech Corp Ltd: Leading Provider of Geodesic Domes, Glass Doors, Canopy Systems, glass floors, glass bridges, Madina Umbrellas & glass building interiors.
-.
-">
+@php
+    $pageTitle = 'Dtech Corp Ltd Services at Premier Geodesic Domes & Canopies';
+    $pageDescription = 'Dtech Corp Ltd: Leading provider of geodesic domes, glass doors, canopy systems, glass floors, glass bridges, Madina umbrellas & glass building interiors.';
+@endphp
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $pageDescription }}">
+<x-json-ld type="Service" :data="[
+    'name' => $pageTitle,
+    'description' => $pageDescription,
+    'url' => url()->current(),
+    'provider' => ['@type' => 'Organization', 'name' => config('organization.name')],
+    'areaServed' => 'BD',
+]" />
 @endsection
 
 @section('page-content')

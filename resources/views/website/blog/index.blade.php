@@ -8,6 +8,11 @@
 <meta property="og:description" content="Latest articles and case studies from DTech Corporation Ltd.">
 <meta property="og:url" content="{{ url('/blog') }}">
 <meta property="og:type" content="website">
+<x-json-ld type="WebPage" :data="[
+    'name' => 'DTech Blog — Facade Design & Engineering Insights',
+    'description' => 'Latest articles and case studies from DTech Corporation Ltd.',
+    'url' => url('/blog'),
+]" />
 @endsection
 
 @push('styles')

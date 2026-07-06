@@ -1,7 +1,15 @@
 @extends('layouts.website')
 
 @section('page-meta')
-<title>{{ $project['title'] }} Project || DTech Corporation</title>
+@php
+    $pageTitle = $project['title'] . ' Project || DTech Corporation';
+    $pageDescription = $project['des'] ?? null;
+@endphp
+<title>{{ $pageTitle }}</title>
+@if($pageDescription)
+<meta name="description" content="{{ $pageDescription }}">
+@endif
+<x-json-ld type="WebPage" :data="['name' => $pageTitle, 'description' => $pageDescription, 'url' => url()->current()]" />
 @endsection
 
 
