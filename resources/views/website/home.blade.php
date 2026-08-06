@@ -150,7 +150,7 @@
                             <img src="assets/img/icons/Geodesic-Dome.svg" alt="Glass Dome">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Geodesic Dome</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Geodesic Dome</a></h3>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             <img src="assets/img/icons/Glass-Dome.svg" alt="Glass Dome">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Glass Dome</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Glass Dome</a></h3>
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                             <img src="assets/img/icons/Skylight.svg" alt="Sky Lights">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Sky Lights</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Sky Lights</a></h3>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                             <img src="assets/img/icons/Stuctural-Glazing.svg" alt="Structural Glazing">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html"
+                            <h3><a href="{{ route('website.blog') }}"
                                     title="Four Side Strutural Glazing | Semi Unitized | Unitized">Structural Glazing</a>
                             </h3>
                         </div>
@@ -201,7 +201,7 @@
                             <img src="assets/img/icons/Window-Door-System.svg" alt="Windows & Doors System">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Windows & Doors System</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Windows & Doors System</a></h3>
                         </div>
                     </div>
                 </div>
@@ -213,7 +213,7 @@
                             <img src="assets/img/icons/Aluminum-Composite-Panel.svg" alt="Aluminum Composite Panel">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Aluminum Composite Panel</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Aluminum Composite Panel</a></h3>
                         </div>
                     </div>
                 </div>
@@ -225,7 +225,7 @@
                             <img src="assets/img/icons/Canopy-System.svg" alt="Canopy System">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Canopy System</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Canopy System</a></h3>
                         </div>
                     </div>
                 </div>
@@ -237,7 +237,7 @@
                             <img src="assets/img/icons/Madina-Umbrella.svg" alt="Madina Umbrella">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Madina Umbrella</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Madina Umbrella</a></h3>
                         </div>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
                             <img src="assets/img/icons/Cladding-ACP.svg" alt="Cladding ACP">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Cladding ACP</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Cladding ACP</a></h3>
                         </div>
                     </div>
                 </div>
@@ -261,7 +261,7 @@
                             <img src="assets/img/icons/Point-Fixing-Glazing.svg" alt="Spider Fixing Glazing">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Spider Fixing Glazing</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Spider Fixing Glazing</a></h3>
                         </div>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
                             <img src="assets/img/icons/Glass-Floor.svg" alt="Glass Floor">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Glass Floor</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Glass Floor</a></h3>
                         </div>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
                             <img src="assets/img/icons/Glass-Bridge.svg" alt="Glass Bridge">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Glass Bridge</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Glass Bridge</a></h3>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@
                             <img src="assets/img/icons/Glass-Stair-Handrail.svg" alt="Glass Stair Handrail">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Glass Stair Handrail</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Glass Stair Handrail</a></h3>
                         </div>
                     </div>
                 </div>
@@ -309,7 +309,7 @@
                             <img src="assets/img/icons/Revolving-Door.svg" alt="Automatic Revolving Door">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Automatic Door</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Automatic Door</a></h3>
                         </div>
                     </div>
                 </div>
@@ -321,7 +321,7 @@
                             <img src="assets/img/icons/Photo-Voltic-Glazing-System.svg" alt="Photo Voltic Glazing System">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Photo Voltic Glazing System</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Photo Voltic Glazing System</a></h3>
                         </div>
                     </div>
                 </div>
@@ -333,7 +333,7 @@
                             <img src="assets/img/icons/Stell-Structure.svg" alt="Steel Structure">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Steel Structure</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Steel Structure</a></h3>
                         </div>
                     </div>
                 </div>
@@ -345,7 +345,7 @@
                             <img src="assets/img/icons/Construction.svg" alt="Construction(Rcc & Steel)">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Construction(Rcc & Steel)</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Construction(Rcc & Steel)</a></h3>
                         </div>
                     </div>
                 </div>
@@ -357,7 +357,7 @@
                             <img src="assets/img/icons/Ceiling.svg" alt="Ceiling">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Ceiling</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Ceiling</a></h3>
                         </div>
                     </div>
                 </div>
@@ -369,7 +369,7 @@
                             <img src="assets/img/icons/Stadium-Roofing.svg" alt="Stadium Roofing">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Stadium Roofing</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Stadium Roofing</a></h3>
                         </div>
                     </div>
                 </div>
@@ -381,7 +381,7 @@
                             <img src="assets/img/icons/Cable-System.svg" alt="Cable System">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Cable System</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Cable System</a></h3>
                         </div>
                     </div>
                 </div>
@@ -393,7 +393,7 @@
                             <img src="assets/img/icons/Metal-Cladding.svg" alt="Metal Cladding">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Metal Cladding</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Metal Cladding</a></h3>
                         </div>
                     </div>
                 </div>
@@ -405,7 +405,7 @@
                             <img src="assets/img/icons/Stone-Cladding.svg" alt="Stone Cladding">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Stone Cladding</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Stone Cladding</a></h3>
                         </div>
                     </div>
                 </div>
@@ -417,7 +417,7 @@
                             <img src="assets/img/icons/Drone.svg" alt="Drone">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Drone</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Drone</a></h3>
                         </div>
                     </div>
                 </div>
@@ -429,7 +429,7 @@
                             <img src="assets/img/icons/Petrochemical-Cover-Solution.svg" alt="Petrochemical Solutions">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Petrochemical Solutions</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Petrochemical Solutions</a></h3>
                         </div>
                     </div>
                 </div>
@@ -441,7 +441,7 @@
                             <img src="assets/img/icons/Balustrades-Raling.svg" alt="Balustrades & Ralings">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Balustrades & Ralings</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Balustrades & Ralings</a></h3>
                         </div>
                     </div>
                 </div>
@@ -453,7 +453,7 @@
                             <img src="assets/img/icons/Pergoals.svg" alt="Pergolas">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Pergolas</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Pergolas</a></h3>
                         </div>
                     </div>
                 </div>
@@ -465,7 +465,7 @@
                             <img src="assets/img/icons/Store-Fronts-Interiors.svg" alt="Store Fronts && Interiors">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Store Fronts & Interiors</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Store Fronts & Interiors</a></h3>
                         </div>
                     </div>
                 </div>
@@ -477,7 +477,7 @@
                             <img src="assets/img/icons/Cooling-Tower.svg" alt="Cooling Tower">
                         </div>
                         <div class="inner-text headline pera-content ">
-                            <h3><a href="service-single.html">Cooling Tower</a></h3>
+                            <h3><a href="{{ route('website.blog') }}">Cooling Tower</a></h3>
                         </div>
                     </div>
                 </div>

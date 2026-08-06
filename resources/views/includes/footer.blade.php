@@ -21,7 +21,7 @@
                                 <li><a href="{{ route('website.clients') }}">Our Clients</a></li>
                                 <li><a href="{{ route('website.suppliers') }}">Our Suppliers</a></li>
                                 <li><a href="{{ route('website.career') }}">Career</a></li>
-                                  <li><a href="https://blog.dtechcorpltd.com/">Blog</a></li>
+                                <li><a href="{{ route('website.blog') }}">Blog</a></li>
                             </ul>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -66,7 +67,14 @@ class Post extends Model implements HasMedia
         if ($media) {
             return $media->getUrl();
         }
-        return $this->featured_image_path ?: null;
+
+        $path = $this->featured_image_path;
+
+        if (! $path || Str::startsWith($path, ['http://', 'https://', '/'])) {
+            return $path ?: null;
+        }
+
+        return Storage::disk('public')->url($path);
     }
 
     public function scopePublished($query)
