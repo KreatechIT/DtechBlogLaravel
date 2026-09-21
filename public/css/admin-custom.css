@@ -1,0 +1,11 @@
+/* Sticky toolbar for the RichEditor so it stays visible while scrolling long content */
+.fi-fo-rich-editor-toolbar {
+    position: sticky;
+    top: 4rem; /* sit just below the sticky topbar (min-h-16) */
+    z-index: 20;
+    background-color: rgb(255 255 255);
+}
+
+.dark .fi-fo-rich-editor-toolbar {
+    background-color: rgb(24 24 27);
+}
